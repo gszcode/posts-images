@@ -1,0 +1,45 @@
+<%- include('templates/header') %> 
+
+<div class="container w-50">
+    <h2 class="text-center my-3 text-light">Edit Post</h2>
+    
+    <form action="/editing/<%= post._id %>" method="POST" enctype="multipart/form-data">
+        <div class="card shadow">
+            <div class="my-3">
+                <img src="/img/<%= post.image %> " alt="Image" class="home-image d-block mx-auto rounded">
+                <input 
+                    type="file"
+                    name="image"
+                    class="form-control my-2 w-50 mx-auto"
+                >
+            </div>
+            <input 
+                type="text"
+                name="name"
+                class="form-control my-2 w-50 mx-auto"
+                autocomplete="off"
+                required
+                minlength="3"
+                value="<%= post.name %>"
+            >
+            <input 
+                type="text"
+                name="date"
+                class="form-control my-2 w-50 mx-auto"
+                autocomplete="off"
+                required
+                minlength="3"
+                value="<%= post.date %>"
+            >
+            <textarea 
+                name="description"
+                class="form-control my-2 w-50 mx-auto"
+                autocomplete="off"
+                required
+            ><%= post.description %></textarea>
+            <button type="submit" class="btn btn-success w-50 my-3 d-block mx-auto">Done</button>
+        </div>
+    </form>
+</div>
+
+<%- include('templates/footer') %> 

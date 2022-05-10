@@ -1,0 +1,42 @@
+<%- include('templates/header') %> 
+
+<div class="container w-50">
+    <h2 class="text-center my-3 text-light">Add Post</h2>
+    
+    <form action="/add-product" method="POST" enctype="multipart/form-data" class="shadow py-4 bg-light rounded">
+        <input 
+            type="text"
+            placeholder="Name"
+            name="name"
+            class="form-control my-2 w-50 mx-auto"
+            autocomplete="off"
+            required
+            minlength="3"
+        >
+        <input 
+            type="text"
+            placeholder="Date"
+            name="date"
+            class="form-control my-2 w-50 mx-auto"
+            autocomplete="off"
+            required
+            minlength="3"
+        >
+        <textarea 
+            placeholder="Description"
+            name="description"
+            class="form-control my-2 w-50 mx-auto"
+            autocomplete="off"
+            required
+        ></textarea>
+        <input 
+            type="file"
+            name="image"
+            class="form-control my-2 w-50 mx-auto"
+            required
+        >
+        <button type="submit" class="btn btn-primary w-50 my-3 d-block mx-auto">Done</button>
+    </form>
+</div>
+
+<%- include('templates/footer') %> 

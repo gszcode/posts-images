@@ -1,0 +1,35 @@
+<%- include('../templates/header') %>
+
+    <div class="container my-4 mx-auto">
+        <% messages.forEach(message => { %>
+            <p class="alert alert-warning"><%= message.msg %></p>
+        <% }) %>
+    </div>
+
+    <div class="container w-50 my-3 bg-light shadow py-4 rounded">
+        <h2 class="text-center">Login</h2>
+
+        <img src="/img/logo-login.png" alt="Login" class="w-50 d-block mx-auto my-3">
+
+        <form action="/users/login" method="POST" class="col">
+            <div class="col-6 mt-3 mx-auto">
+                <input 
+                    type="email"
+                    class="form-control my-2"
+                    placeholder="Enter email"
+                    name="email"
+                >
+            </div>
+            <div class="col-6 mt-3 mx-auto">
+                <input 
+                    type="password"
+                    class="form-control my-2"
+                    placeholder="Enter password"
+                    name="password"
+                >
+            </div>
+            <button class="btn btn-primary d-block w-50 my-4 mx-auto">Login</button>
+        </form>
+    </div>
+
+<%- include('../templates/footer') %>

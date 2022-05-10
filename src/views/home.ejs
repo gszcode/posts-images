@@ -1,0 +1,26 @@
+<%- include('templates/header') %>
+
+    <h1 class="text-center text-light my-3">Posts</h1>
+
+    <div class="container">
+        <div class="row">
+            <% posts.forEach(post => { %>
+                <div class="col-sm-8 col-md-4 col-lg-3">
+                    <div class="home-card card-body bg-light rounded shadow w-100">
+                        <h4 class="card-title text-center pb-2"><%= post.name %></h4>
+                        <img src="/img/<%= post.image %>" class="home-image rounded">
+                        <p class="card-text my-2"><%= post.description %></p>
+                        <p class="text-success"><em><%= post.date %><small class="text-muted"></small></em></p>
+                        <div class="d-flex justify-content-between">
+                           <a href="/delete/<%= post._id %>" class="w-50 mx-1 btn btn-danger">Delete</a>
+                           <a href="/edit/<%= post._id %>" class="w-50 mx-1 btn btn-info">Edit</a>
+                        </div>
+                        <a href="/detail/<%= post._id %>" class="d-block my-2 btn btn-warning">Details</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+<%- include('templates/footer') %> 
+    

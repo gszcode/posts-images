@@ -1,0 +1,19 @@
+<%- include('templates/header') %>
+
+    <div class="container row my-3 mx-auto">
+        <div class="col-sm-8 mx-auto">
+            <div class="card">
+                <div class="card-body shadow">
+                    <h2 class="card-title pb-2"><strong>Name:</strong> <%= post.name %></h2>
+                    <img src="/img/<%= post.image %>" class="home-image details rounded w-100">
+                    <p class="card-text my-2"><strong>Description:</strong> <%= post.description %></p>
+                    <p class="text-success"><strong>Date:</strong> <em><%= post.date %><small class="text-muted"></small></em></p>
+                    <div class="d-flex justify-content-between">
+                        <a href="/" class="btn btn-warning">Return</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('templates/footer') %> 

@@ -1,0 +1,53 @@
+<%- include('../templates/header') %>
+
+    <div class="container my-4 mx-auto">
+        <% messages.forEach(message => { %>
+            <p class="alert alert-warning"><%= message.msg %></p>
+        <% }) %>
+    </div>
+
+    <div class="container w-50 my-3 bg-light shadow py-4 rounded">
+        <h2 class="text-center">Register</h2>
+
+        <form action="/users/register" method="POST" class="col">
+            <div class="col-6 mt-3 mx-auto">
+                <input 
+                    type="text"
+                    class="form-control my-2"
+                    placeholder="Enter user"
+                    name="user"
+                    required
+                >
+            </div>
+            <div class="col-6 mt-3 mx-auto">
+                <input 
+                    type="email"
+                    class="form-control my-2"
+                    placeholder="Enter email"
+                    name="email"
+                    required
+                >
+            </div>
+            <div class="col-6 mt-3 mx-auto">
+                <input 
+                    type="password"
+                    class="form-control my-2"
+                    placeholder="Enter password"
+                    name="password"
+                    required
+                >
+            </div>
+            <div class="col-6 mt-3 mx-auto">
+                <input 
+                    type="password"
+                    class="form-control my-2"
+                    placeholder="Repeat password"
+                    name="repassword"
+                    required
+                >
+            </div>
+            <button class="btn btn-primary d-block w-50 my-4 mx-auto">Register</button>
+        </form>
+    </div>
+
+<%- include('../templates/footer') %>
